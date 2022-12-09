@@ -10,7 +10,7 @@ Application mobile de vente de montres.
 Lucas Perez - Hugo Raoult
 
 ## Stacks : 
-React - Node - Tailwind - Mongodb
+React - Node - Tailwind - Firebase
 
 ## User stories :
 
