@@ -1,4 +1,4 @@
-# pwa-tp2-mobile-shop
+# pwa-tp2-watchup
 
 ## Projet 
 
