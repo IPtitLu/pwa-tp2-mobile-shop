@@ -21,10 +21,10 @@ mongoose
 
 app.get("/articles", auth , Articles.getAll);
 app.get("/articles/:id", auth, Articles.getOne);
-app.get("/users", Users.getAll);
-app.get("/users/:id", Users.getOne);
-app.get("/categories", Categories.getAll);
-app.get("/categories/:id", Categories.getOne);
+app.get("/users", auth , Users.getAll);
+app.get("/users/:id",auth , Users.getOne);
+app.get("/categories", auth , Categories.getAll);
+app.get("/categories/:id", auth , Categories.getOne);
 app.post('/api/login', Login.login);
 
 
