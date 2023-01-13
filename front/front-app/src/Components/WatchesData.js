@@ -1,0 +1,88 @@
+import watch from "../Assets/watch.png";
+
+export default [
+    {
+        id: 1,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 2,
+        name: "Rolex oyster",
+        price: "5490€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 3,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 4,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 5,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 6,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 7,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 8,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 7,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 8,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 7,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+    {
+        id: 8,
+        name: "Maserati - Silver",
+        price: "300€",
+        image: watch,
+        about: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli",
+    },
+];

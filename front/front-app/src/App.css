@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+    text-align: center;
+}
+
+.card-item {
+    width: 40%;
+}
+
+.card-list {
+    max-height: 67vh;
+}
+
+.categorie-item {
+    border-radius: 20px;
+}
+
+.button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-page {
+    height: 90vh;
+}
+
+.input {
+    border-radius: 15px;
+}
