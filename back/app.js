@@ -26,7 +26,7 @@ app.get("/users/:id",auth , Users.getOne);
 app.get("/categories", auth , Categories.getAll);
 app.get("/categories/:id", auth , Categories.getOne);
 app.post('/api/login', Login.login);
-
+app.put('/add-article/:userId/:articleId', Users.addToCart);
 
 
 app.listen(3000, () => {
