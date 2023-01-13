@@ -1,7 +1,6 @@
-
-import jwt from 'jsonwebtoken'
-import {CUSTOM_PRIVATE_KEY} from '../auth/private_key.js';
-import User from '../models/User.js';
+import jwt from "jsonwebtoken";
+import { CUSTOM_PRIVATE_KEY } from "../auth/private_key.js";
+import User from "../models/User.js";
 
 export const Login = {
     login: async (req, res) => {
