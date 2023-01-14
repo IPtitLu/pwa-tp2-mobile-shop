@@ -1,47 +1,43 @@
-import { React, useState , useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import jwt from "jwt-decode";
 import axios from "axios";
 
 const CartCard = ({ productInfo }) => {
+    const [currentUser, setCurrentUser] = useState([]);
+    const [ready, setReady] = useState(false);
 
-    const [currentUser, setCurrentUser] = useState([])
-    const [ready, setReady] = useState(false)
-
-
-
-    useEffect(()=> {
+    useEffect(() => {
         async function getUser() {
-            
-            const userData =  localStorage.getItem("user");
-            const response = await fetch(`http://localhost:3000/users_by_username/${userData}`);
+            const userData = localStorage.getItem("user");
+            const response = await fetch(
+                `http://localhost:3000/users_by_username/${userData}`
+            );
             const data = await response.json();
             console.log(data);
             setCurrentUser(data);
-        
         }
         getUser();
     }, []);
 
-    useEffect(()=> {
-        if(ready) {
-            window.location.reload()
+    useEffect(() => {
+        if (ready) {
+            window.location.reload();
         }
     }, [ready]);
-    
+
     function deleteFromCart() {
-        return axios.put(`http://localhost:3000/delete-article/${currentUser._id}/${productInfo._id}`)
-        .then(setReady(true)) 
-        .catch(error => {
-          console.log(error);
-          throw error;
-        });
-    
-}
-
-
-
+        return axios
+            .put(
+                `http://localhost:3000/delete-article/${currentUser._id}/${productInfo._id}`
+            )
+            .then(setReady(true))
+            .catch((error) => {
+                console.log(error);
+                throw error;
+            });
+    }
 
     return (
         <li
@@ -62,7 +58,8 @@ const CartCard = ({ productInfo }) => {
                     {productInfo.prix}€
                 </p>
             </div>
-            <button onClick={deleteFromCart}
+            <button
+                onClick={deleteFromCart}
                 href="profile"
                 className="p-2.5 border-0 border-orange hover:border-b-4 h-19 ease-in-out duration-100"
             >

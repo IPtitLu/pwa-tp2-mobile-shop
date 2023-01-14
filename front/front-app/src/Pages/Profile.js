@@ -35,14 +35,12 @@ const Cart = () => {
 
         const username = state.username;
         const password = state.password;
-        console.log(username + password);
         axios
             .post("http://localhost:3000/api/login", {
                 username: username,
                 password: password,
             })
             .then((res) => {
-                console.log(res.data);
                 if (res.status === 200) {
                     localStorage.setItem("user", username);
 
