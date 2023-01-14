@@ -43,11 +43,14 @@ const Cart = () => {
             })
             .then((res) => {
                 console.log(res.data);
-                if (res.status == 200) {
-                localStorage.setItem("user", username)
-                navigate("/home");
+                if (res.status === 200) {
+                    localStorage.setItem("user", username);
 
+                    window.location.reload();
 
+                    // setTimeout(() => {
+
+                    // }, 1000);
                 }
                 // Traiter la réponse de la requête de connexion
             })
@@ -104,11 +107,13 @@ const Cart = () => {
                             ) : (
                                 ""
                             )}
-                            <input
-                                type="submit"
-                                value="Submit"
-                                className="w-full h-max px-4 py-3 ml-10 mr-10 bg-orange text-white mx-2 mt-8 mb-5 categorie-item font-semibold drop-shadow-lg hover:bg-white hover:text-orange ease-in-out duration-200"
-                            />
+                            <a href="/home" className="w-full">
+                                <input
+                                    type="submit"
+                                    value="Submit"
+                                    className="w-full h-max px-4 py-3 bg-orange text-white mx-2 mt-8 mb-5 categorie-item font-semibold drop-shadow-lg hover:bg-white hover:text-orange ease-in-out duration-200"
+                                />
+                            </a>
                         </form>
                     )}
                 </div>
