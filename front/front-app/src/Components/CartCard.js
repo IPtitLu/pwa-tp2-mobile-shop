@@ -1,12 +1,51 @@
-import { React } from "react";
+import { React, useState , useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import jwt from "jwt-decode";
+import axios from "axios";
 
 const CartCard = ({ productInfo }) => {
+
+    const [currentUser, setCurrentUser] = useState([])
+    const [ready, setReady] = useState(false)
+
+
+
+    useEffect(()=> {
+        async function getUser() {
+            
+            const userData =  localStorage.getItem("user");
+            const response = await fetch(`http://localhost:3000/users_by_username/${userData}`);
+            const data = await response.json();
+            console.log(data);
+            setCurrentUser(data);
+        
+        }
+        getUser();
+    }, []);
+
+    useEffect(()=> {
+        if(ready) {
+            window.location.reload()
+        }
+    }, [ready]);
+    
+    function deleteFromCart() {
+        return axios.put(`http://localhost:3000/delete-article/${currentUser._id}/${productInfo._id}`)
+        .then(setReady(true)) 
+        .catch(error => {
+          console.log(error);
+          throw error;
+        });
+    
+}
+
+
+
+
     return (
         <li
-            key={productInfo.id}
+            key={productInfo._id}
             className="bg-white mx-4 flex items-center justify-around flex-row w-full mt-5 px-4 py-4 rounded-custom drop-shadow-xl
 
 
@@ -23,7 +62,7 @@ const CartCard = ({ productInfo }) => {
                     {productInfo.prix}€
                 </p>
             </div>
-            <button
+            <button onClick={deleteFromCart}
                 href="profile"
                 className="p-2.5 border-0 border-orange hover:border-b-4 h-19 ease-in-out duration-100"
             >
