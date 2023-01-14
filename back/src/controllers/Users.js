@@ -10,6 +10,18 @@ const Users = {
       res.status(500).send({ error: "Error fetching users from database" });
     }
   },
+  getByUsername: async (req, res) => {
+    const username = req.params.username;
+    try {
+      const user = await User.findOne({ pseudo: username } )
+      if (!user) {
+        return res.status(404).send({ error: "User not found" });
+      }
+      res.send(user);
+    } catch (error) {
+      res.status(500).send({ error: "Error fetching user from database" });
+    }
+  },
   getOne: async (req, res) => {
     const id = req.params.id;
     try {

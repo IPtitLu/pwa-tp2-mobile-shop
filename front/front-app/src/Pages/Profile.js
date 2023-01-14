@@ -43,8 +43,13 @@ const Cart = () => {
             })
             .then((res) => {
                 console.log(res.data);
-                // Traiter la réponse de la requête de connexion
+                if (res.status == 200) {
+                localStorage.setItem("user", username)
                 navigate("/home");
+
+
+                }
+                // Traiter la réponse de la requête de connexion
             })
             .catch((error) => {
                 console.log(error);

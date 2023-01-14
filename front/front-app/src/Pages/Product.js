@@ -3,9 +3,12 @@ import Footer from "../Components/Footer";
 import { useParams } from "react-router-dom";
 import WatchesData from "../Components/WatchesData";
 import { FaArrowLeft } from "react-icons/fa";
+import axios from "axios";
+
 
 const Product = () => {
-    const [state, setState] = useState();
+    const [state, setState] = useState([]);
+    const [currentUser, setCurrentUser] = useState([])
     const params = useParams();
 
     const watchId = params.id;
@@ -19,6 +22,31 @@ const Product = () => {
         }
         fetchData();
     }, []);
+
+    useEffect(()=> {
+        async function getUser() {
+            
+            const userData =  localStorage.getItem("user");
+            const response = await fetch(`http://localhost:3000/users_by_username/${userData}`);
+            const data = await response.json();
+            console.log(data);
+            setCurrentUser(data);
+        
+        }
+        getUser();
+    }, [state]);
+
+    function addToCart() {
+        return axios.put(`http://localhost:3000/add-article/${currentUser._id}/${state._id}`)
+        .then(response => response.data)
+        .catch(error => {
+          console.log(error);
+          throw error;
+        });
+
+    }
+
+    
 
     return (
         <div className="w-full flex justify-center bg-white max-h-screen">
@@ -41,7 +69,7 @@ const Product = () => {
                     </p>
                     <p className="font-medium text-left mb-2 mt-10">About</p>
                     <p className="font-light text-left my-2">aaa</p>
-                    <button
+                    <button onClick={addToCart}
                         className="w-full h-max px-4 py-3 bg-orange text-white mx-2 mt-8 mb-5 categorie-item font-semibold drop-shadow-lg hover:bg-white hover:text-orange ease-in-out duration-200
 
                 "
