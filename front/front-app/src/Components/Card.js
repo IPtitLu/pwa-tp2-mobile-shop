@@ -1,7 +1,7 @@
 import { React } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-const Home = ({ watchInfo }) => {
+const Card = ({ watchInfo }) => {
     return (
         <li
             key={watchInfo.id}
@@ -25,4 +25,4 @@ const Home = ({ watchInfo }) => {
     );
 };
 
-export default Home;
+export default Card;

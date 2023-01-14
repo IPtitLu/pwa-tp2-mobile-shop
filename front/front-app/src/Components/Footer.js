@@ -2,7 +2,7 @@ import React from "react";
 import { FaHome, FaShoppingCart, FaUser } from "react-icons/fa";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-const Footer = ({ token }) => {
+const Footer = () => {
     return (
         <footer className="w-full flex flex-row justify-between items-center nowrap bg-card-">
             <ul className="w-full flex flex-row justify-around items-center nowrap h-20">
@@ -16,7 +16,7 @@ const Footer = ({ token }) => {
                 </li>
                 <li className="w-10 flex justify-center">
                     <Link
-                        to={`/cart/${token}`}
+                        to={`/cart`}
                         className="p-2.5 border-0 border-orange hover:border-b-4 h-19 ease-in-out duration-100"
                     >
                         <FaShoppingCart className="w-6 h-6" />
@@ -24,7 +24,7 @@ const Footer = ({ token }) => {
                 </li>
                 <li className="w-10 flex justify-center">
                     <a
-                        href="profile"
+                        href="/profile"
                         className="p-2.5 border-0 border-orange hover:border-b-4 h-19 ease-in-out duration-100"
                     >
                         <FaUser className="w-6 h-6 hover:color-orange" />

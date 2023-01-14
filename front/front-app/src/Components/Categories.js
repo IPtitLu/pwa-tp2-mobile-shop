@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import Card from "./Card";
 
-const Home = () => {
+const Categories = () => {
     const [categories, setCategories] = useState([
         "Maserati",
         "Rolex",
@@ -25,4 +25,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Categories;

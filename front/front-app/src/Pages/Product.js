@@ -10,8 +10,6 @@ const Product = () => {
 
     const watch = WatchesData.find((prod) => prod.id == params.id);
 
-    console.log(watch);
-
     return (
         <div className="w-full flex justify-center bg-white max-h-screen">
             <div className="w-full max-w-md relative max-h-screen bg-card-gray mx-2 flex items-center flex-col">

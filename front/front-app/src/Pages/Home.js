@@ -5,9 +5,6 @@ import Categories from "../Components/Categories";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
-    const location = useLocation();
-    console.log(location);
-
     return (
         <div className="w-full flex justify-center bg-white max-h-screen">
             <div className="w-full max-w-md relative max-h-screen bg-card-gray">
@@ -18,9 +15,7 @@ const Home = () => {
                 <div className="w-full">
                     <CardsList />
                 </div>
-                <Footer
-                    name={location.token !== null ? location.token : null}
-                />
+                <Footer />
             </div>
         </div>
     );

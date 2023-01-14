@@ -1,7 +1,9 @@
 import { React } from "react";
 import { FaTrash } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import jwt from "jwt-decode";
 
-const Home = ({ watchInfo }) => {
+const CartCard = ({ watchInfo }) => {
     return (
         <li
             key={watchInfo.id}
@@ -31,4 +33,4 @@ const Home = ({ watchInfo }) => {
     );
 };
 
-export default Home;
+export default CartCard;

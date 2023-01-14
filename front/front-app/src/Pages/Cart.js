@@ -6,6 +6,20 @@ import WatchesData from "../Components/WatchesData";
 import CartCard from "../Components/CartCard";
 
 const Cart = () => {
+    const [watchesTotalAmount, setWatchesTotalAmount] = useState("");
+
+    const [state, setState] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch("http://localhost:3000/articles");
+            const data = await response.json();
+            console.log(data);
+            setState(data);
+        }
+        fetchData();
+    }, []);
+
     return (
         <div className="w-full flex justify-center bg-white max-h-screen">
             <div className="w-full max-w-md relative max-h-screen bg-card-gray mx-2 flex items-center flex-col">
@@ -25,7 +39,7 @@ const Cart = () => {
                 <div className="w-full flex justify-between align-center mt-6">
                     <h4 className="font-medium text-1xl ml-12">Total</h4>
                     <h4 className="font-bold text-orange text-1xl mr-12">
-                        300€
+                        {watchesTotalAmount !== "" ? watchesTotalAmount : "0€"}
                     </h4>
                 </div>
                 <div className="w-full flex justify-center">
