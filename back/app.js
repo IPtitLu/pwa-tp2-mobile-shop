@@ -24,15 +24,14 @@ mongoose
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log(err));
 
-app.get("/articles", auth, Articles.getAll);
+app.get("/articles", Articles.getAll);
 app.get("/articles/:id", auth, Articles.getOne);
-app.get("/users", auth , Users.getAll);
-app.get("/users/:id",auth , Users.getOne);
-app.get("/categories", auth , Categories.getAll);
-app.get("/categories/:id", auth , Categories.getOne);
-app.post('/api/login', Login.login);
-app.put('/add-article/:userId/:articleId', Users.addToCart);
-
+app.get("/users", Users.getAll);
+app.get("/users/:id", auth, Users.getOne);
+app.get("/categories", auth, Categories.getAll);
+app.get("/categories/:id", auth, Categories.getOne);
+app.post("/api/login", Login.login);
+app.put("/add-article/:userId/:articleId", Users.addToCart);
 
 app.listen(3000, () => {
     console.log("Server started on port 3000");

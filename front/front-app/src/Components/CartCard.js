@@ -3,24 +3,24 @@ import { FaTrash } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import jwt from "jwt-decode";
 
-const CartCard = ({ watchInfo }) => {
+const CartCard = ({ productInfo }) => {
     return (
         <li
-            key={watchInfo.id}
+            key={productInfo.id}
             className="bg-white mx-4 flex items-center justify-around flex-row w-full mt-5 px-4 py-4 rounded-custom drop-shadow-xl
 
 
         "
         >
             <img
-                src={watchInfo.image}
+                src={productInfo.image}
                 alt="watch"
                 className="max-w-20 max-h-20 object-cover"
             />
             <div>
-                <h3 className="my-2 font-medium">{watchInfo.name}</h3>
+                <h3 className="my-2 font-medium">{productInfo.nom}</h3>
                 <p className="mt-2 mb-4 font-bold text-orange">
-                    {watchInfo.price}
+                    {productInfo.prix}€
                 </p>
             </div>
             <button
