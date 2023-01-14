@@ -14,6 +14,7 @@ const Cart = () => {
         async function fetchData() {
             const response = await fetch("http://localhost:3000/users");
             const data = await response.json();
+            console.log(data);
             setProductsId(data[0].cart);
         }
         fetchData();
