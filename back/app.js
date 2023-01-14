@@ -34,7 +34,6 @@ app.get("/categories/:id",  Categories.getOne);
 app.post('/api/login', Login.login);
 app.put('/add-article/:userId/:articleId', Users.addToCart);
 
-
 app.listen(3000, () => {
     console.log("Server started on port 3000");
 });

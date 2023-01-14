@@ -1,5 +1,5 @@
-import User from '../models/User.js'
-import Article from '../models/Article.js';
+import User from "../models/User.js";
+import Article from "../models/Article.js";
 
 const Users = {
   getAll: async (req, res) => {
@@ -38,19 +38,22 @@ const Users = {
     const userId = req.params.userId;
     const articleId = req.params.articleId;
 
-    try {
-      const user = await User.findById(userId);
-      if (!user) {
-        return res.status(404).send({ error: "User not found" });
-      }
-      user.cart.push(articleId)
-      await user.save();
-      return res.status(200).send({ message: "Article added to cart successfully" });
-
-      } catch (error) {
-        res.status(500).send({ error: "Erreur adding article to database" });
-      }
-}
-}
+        try {
+            const user = await User.findById(userId);
+            if (!user) {
+                return res.status(404).send({ error: "User not found" });
+            }
+            user.cart.push(articleId);
+            await user.save();
+            return res
+                .status(200)
+                .send({ message: "Article added to cart successfully" });
+        } catch (error) {
+            res.status(500).send({
+                error: "Erreur adding article to database",
+            });
+        }
+    },
+};
 
 export default Users;
