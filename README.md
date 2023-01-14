@@ -31,9 +31,3 @@ React - Node - Tailwind - Firebase
  L'utilisateur peut voir un montant total d'achat sur la carte d'achat qui est calculé comme la somme des quantités multipliées par le prix unitaire pour chaque produit commandé.
  
  L'utilisateur peut ajuster la quantité commandée pour tout produit afin d'ajuster le montant total de l'achat.
- 
- L'utilisateur peut cliquer sur le bouton "Passer la commande" sur la page du panier pour terminer la commande. L'utilisateur verra un numéro de confirmation lorsque la commande aura été passée.
- 
- L'utilisateur peut cliquer sur le bouton Annuler la commande sur la page du panier d'achat pour annuler la commande. L'utilisateur verra les quantités de produits et le montant total de l'achat remis à zéro.
- 
- L'utilisateur peut cliquer sur le bouton Voir plus de produits sur la page du panier pour revenir à la page des produits. Si la commande n'a pas encore été passée, cela n'effacera pas les produits qui ont déjà été ajoutés à la page des produits.
