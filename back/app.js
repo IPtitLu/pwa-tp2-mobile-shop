@@ -25,11 +25,12 @@ mongoose
     .catch((err) => console.log(err));
 
 app.get("/articles", Articles.getAll);
-app.get("/articles/:id", auth, Articles.getOne);
+app.get("/articles/:id", Articles.getOne);
 app.get("/users", Users.getAll);
-app.get("/users/:id", auth, Users.getOne);
-app.get("/categories", auth, Categories.getAll);
-app.get("/categories/:id", auth, Categories.getOne);
+app.get("/users/:id", Users.getOne);
+app.get("/users_by_username/:username", Users.getByUsername);
+app.get("/categories", Categories.getAll);
+app.get("/categories/:id", Categories.getOne);
 app.post("/api/login", Login.login);
 app.put("/add-article/:userId/:articleId", Users.addToCart);
 
