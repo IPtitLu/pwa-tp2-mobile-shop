@@ -18,11 +18,7 @@ React - Node - Tailwind - MongoDb
  
  L'utilisateur peut voir une fiche sur la page des produits pour chaque produit, avec la vignette du produit, son nom, son prix, une brève description et un bouton Sélectionner.
  
- Lorsque l'utilisateur clique sur le bouton "Sélectionner", une page de détails sur le produit s'affiche. Elle contient les mêmes informations que la fiche produit, mais aussi un identifiant unique, une description longue, un bouton "Ajouter au panier" et un bouton "Voir d'autres produits".
- 
- L'utilisateur peut voir un message de confirmation lorsque le produit est ajouté au panier.
- 
- L'utilisateur peut cliquer sur la page "Voir d'autres produits" pour revenir à la page des produits.
+ Lorsque l'utilisateur clique sur le bouton "Sélectionner", une page de détails sur le produit s'affiche. Elle contient les mêmes informations que la fiche produit, mais aussi un identifiant unique, une description longue, un bouton "Ajouter au panier".
  
  L'utilisateur peut voir un bouton "Panier" à la fois sur la page d'accueil et sur la page des produits. Conseil : une barre supérieure pourrait être un bon emplacement commun pour ce bouton.
  
