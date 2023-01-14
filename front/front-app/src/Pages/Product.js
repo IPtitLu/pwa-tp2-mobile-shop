@@ -38,7 +38,7 @@ const Product = () => {
 
     function addToCart() {
         return axios.put(`http://localhost:3000/add-article/${currentUser._id}/${state._id}`)
-        .then(response => response.data)
+        .then()
         .catch(error => {
           console.log(error);
           throw error;

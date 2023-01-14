@@ -7,6 +7,7 @@ import axios from "axios";
 const CartCard = ({ productInfo }) => {
 
     const [currentUser, setCurrentUser] = useState([])
+    const [ready, setReady] = useState(false)
 
 
 
@@ -23,16 +24,20 @@ const CartCard = ({ productInfo }) => {
         getUser();
     }, []);
 
+    useEffect(()=> {
+        if(ready) {
+            window.location.reload()
+        }
+    }, [ready]);
     
     function deleteFromCart() {
         return axios.put(`http://localhost:3000/delete-article/${currentUser._id}/${productInfo._id}`)
-        .then(window.location.reload()) 
+        .then(setReady(true)) 
         .catch(error => {
           console.log(error);
           throw error;
         });
-       
-
+    
 }
 
 
